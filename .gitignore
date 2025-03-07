@@ -1,0 +1,14 @@
+# Fichiers Python
+*.pyc
+__pycache__/
+
+# Environnement virtuel
+env/
+venv/
+
+# Base de données SQLite (si utilisée)
+*.sqlite3
+
+# Configurations locales
+*.env
+.DS_Store
