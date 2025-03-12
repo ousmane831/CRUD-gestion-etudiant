@@ -1,0 +1,142 @@
+/* maka/static/css/style.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+}
+
+/* En-tête */
+header {
+    background-color: #87e4a8; /* vert clair */
+    padding: 20px;
+}
+
+header h1 {
+    color: #ff6f47; /* orange */
+    font-size: 3em;
+}
+
+/* Section des produits */
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.product {
+    background-color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    width: 250px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.product:hover {
+    transform: scale(1.05);
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.product h2 {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.product p {
+    color: #555;
+}
+
+button {
+    background-color: #ff6f47; /* orange */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff3e1d;
+}
+
+/* --- Animation tasse de café --- */
+.coffee-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 50px auto;
+}
+
+.cup {
+    width: 100px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 50px 50px 10px 10px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    animation: rotateCup 4s infinite linear;
+}
+
+/* Poignée de la tasse */
+.cup::before {
+    content: "";
+    width: 25px;
+    height: 35px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    right: -15px;
+    top: 10px;
+    border: 5px solid #ddd;
+}
+
+/* Effet de vapeur */
+.steam {
+    position: absolute;
+    width: 10px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.7);
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    animation: steamUp 3s infinite ease-in-out;
+}
+
+/* Animation vapeur */
+@keyframes steamUp {
+    0% {
+        transform: translateY(10px);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(-10px);
+        opacity: 0.4;
+    }
+    100% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+}
+
+/* Animation de rotation de la tasse */
+@keyframes rotateCup {
+    0% {
+        transform: translateX(-50%) rotate(0deg);
+    }
+    100% {
+        transform: translateX(-50%) rotate(360deg);
+    }
+}

@@ -5,9 +5,12 @@ from .forms import *
 
 # Create your views here.
 
+def index(request):  
+    return render(request, 'gestion_etudiant/index.html')
+
 
 def list_etudiant(request):
-    etudiants = Etudiant.objects.all()
+    etudiants = Etudiant.objects.all().order_by('-created_at')
     return render(request, 'gestion_etudiant/list_etudiant.html', {'etudiants': etudiants})
 
 def detail_etudiant(request, id):
@@ -42,3 +45,9 @@ def supprimer_etudiant(request, id):
     etudiant = Etudiant.objects.get(id= id)
     etudiant.delete()
     return redirect('list_etudiant')
+
+def contact(request):
+    return render(request , 'gestion_etudiant/contact.html')
+
+def blog_cours(request):
+    return render(request , 'gestion_etudiant/blog_cours.html')

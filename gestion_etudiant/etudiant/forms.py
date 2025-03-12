@@ -19,7 +19,7 @@ class EtudiantForm(ModelForm):
                 'placeholder': 'Entrez son âge',
                 'class': 'form-control'
             }),
-            'metiers': forms.TextInput(attrs={
+            'metiers': forms.Select(attrs={
                 'placeholder': 'Choisissez le métier',
                 'class': 'form-control'
             }),
@@ -31,4 +31,9 @@ class EtudiantForm(ModelForm):
             'est_inscrit': forms.CheckboxInput(attrs={ 
                 'class': 'form-check-input'
             }),
+            
+            # 'image': forms.FileInput(attrs={ 
+            #     'placeholder': 'Choisissez une image',
+            #     'class': 'form-control'
+            # }),
         }
